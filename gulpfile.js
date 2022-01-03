@@ -32,7 +32,7 @@ let path = {
     },
     src: { //Burası kaynaklar
         html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
-        js: 'src/js/main/**/*.js',
+        js: 'src/js/**/*.js',
         vendor: 'src/js/vendor/*.js',
         css: 'src/css/main.scss',
         images: 'src/img/**/*.*',
@@ -41,7 +41,7 @@ let path = {
     },
     watch: { //Burada izlemek istediğimiz dosyaları belirtiyoruz
         html: 'src/**/*.html',
-        js: 'src/js/main/*.js',
+        js: 'src/js/**/*.js',
         vendor: 'src/js/vendor/*.js',
         css: 'src/css/**/*.scss',
         images: 'src/img/**/*.*',
@@ -110,7 +110,9 @@ gulp.task('css:build', async function () {
         }))
         .pipe(gulp.dest(path.build.css))
         .pipe(minifyCSS())
-        .pipe(rename({ suffix: '.min' }))
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(gulp.dest(path.build.css)); //build deki css e atar
 });
 
@@ -185,13 +187,13 @@ gulp.task('build', gulp.series(
 
 gulp.task('watch', function () {
     gulp.watch([path.watch.html], gulp.series('html:build')).on('change', browserSync.reload).on('unlink', function (filepath) {
-        let filePathFromSrc = paths.relative(paths.resolve('src'), filepath) // html faylarinin silinib silinmediyi src icinde kontrol edilir
+            let filePathFromSrc = paths.relative(paths.resolve('src'), filepath) // html faylarinin silinib silinmediyi src icinde kontrol edilir
 
-        let destFilePath = paths.resolve('build', filePathFromSrc);
+            let destFilePath = paths.resolve('build', filePathFromSrc);
 
-        del.sync(destFilePath);
+            del.sync(destFilePath);
 
-    }),
+        }),
         gulp.watch([path.watch.css], gulp.series('css:build')).on('change', browserSync.reload),
 
         gulp.watch([path.watch.js], gulp.series('js:build')).on('change', browserSync.reload),
@@ -206,26 +208,26 @@ gulp.task('watch', function () {
         }),
 
         gulp.watch([path.watch.fonts], gulp.series('fonts:build')).on('change', browserSync.reload).on('unlink', function (filepath) {
-            
-            
+
+
             let filePathFromSrc = paths.relative(paths.resolve('src'), filepath) // html faylarinin silinib silinmediyi src icinde kontrol edilir
 
-            let endPath=paths.basename(filePathFromSrc)
+            let endPath = paths.basename(filePathFromSrc)
 
             let destFilePath = paths.resolve('build/fonts/', endPath);
-            
+
             del.sync(destFilePath);
 
         }),
 
         gulp.watch([path.watch.libs], gulp.series('libs:build')).on('change', browserSync.reload).on('unlink', function (filepath) {
 
-            let nameDir=paths.dirname(filepath)
+            let nameDir = paths.dirname(filepath)
 
             let filePathFromSrc = paths.relative(paths.resolve('src'), nameDir) // html faylarinin silinib silinmediyi src icinde kontrol edilir
-            
+
             let destFilePath = paths.resolve('build', filePathFromSrc);
-            
+
             del.sync(destFilePath);
 
         }),

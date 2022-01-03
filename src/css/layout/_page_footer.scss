@@ -1,0 +1,152 @@
+.footer_slide {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    .slide_heading {
+        width: 100%;
+        height: 5rem;
+        margin-top: 3.8rem;
+        h1 {
+            // margin-top: 1.5rem;
+            font-size: 3.5rem;
+            text-align: center;
+        }
+    }
+    .slide_box {
+        width: 75%;
+        height: 40rem;
+        // margin: 0 auto;
+        margin-top: 3rem;
+        .swiper {
+            width: 100%;
+            height: 40rem;
+            position: relative;
+            .swiper-slide {
+                width: 30rem;
+                // height: 16rem;
+                text-align: center;
+                background: #fff;
+                // height: 36rem;
+                position: relative;
+                /* Center slide text vertically */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .slider_text {
+                    position: absolute;
+                    bottom: 0;
+                    // left: 0;
+                    background-color: white;
+                    opacity: 0.7;
+                    width: 100%;
+                    height: auto;
+                    p {
+                        // position: absolute;
+                        // margin: auto;
+                        margin-top: auto;
+                        font-size: 1.7rem;
+                    }
+                    a {
+                        display: block;
+                        color: #8650a6;
+                        font-size: 1.3rem;
+                        margin: auto;
+                    }
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    // height: auto;
+                }
+            }
+        }
+    }
+    .footer_last {
+        margin-top: 5rem;
+        width: 100%;
+        height: auto;
+        position: relative;
+        background: rgb(223, 90, 156);
+        background: linear-gradient( 90deg, rgba(223, 90, 156, 1) 0%, rgba(181, 12, 143, 0.9836309523809523) 38%, rgba(134, 80, 166, 1) 100%);
+    }
+    .last_image {
+        width: 100%;
+        height: 10rem;
+        position: absolute;
+        top: 1.9rem;
+        .last_image_group {
+            width: 16rem;
+            height: 4.5rem;
+            position: absolute;
+            left: 13rem;
+            top: 1.5rem;
+        }
+    }
+    .last_section {
+        width: 100%;
+        height: 27rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+        .section_lists {
+            width: 60%;
+            height: 135px;
+            display: flex;
+            justify-content: center;
+            font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+            // align-items: center;
+            .box {
+                width: 30%;
+                height: 13.5rem;
+                // align-items: center;
+                p {
+                    a {
+                        color: white;
+                        font-size: 1.8rem;
+                        font-family: Georgia, "Times New Roman", Times, serif;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+        .section_search {
+            width: 25%;
+            height: 185px;
+            position: relative;
+            p {
+                text-align: center;
+                margin: 0.5rem;
+                color: white;
+                font-family: fantasy;
+                font-size: 2rem;
+            }
+            .input-group {
+                input {
+                    padding: 1.5rem;
+                    background-color: #a96db2;
+                    &::placeholder {
+                        color: black;
+                        letter-spacing: 0.2rem;
+                    }
+                }
+                span {
+                    background-color: #f2ccff;
+                }
+                .last_text {
+                    margin-top: 2rem;
+                    font-size: 13px;
+                    text-align: right;
+                    margin-bottom: 10px;
+                    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                }
+            }
+        }
+    }
+}
+
+//

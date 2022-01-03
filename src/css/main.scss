@@ -1,5 +1,5 @@
 @import "abstracts/bt5start";
-  
+
 @import "abstracts/function";
 @import "abstracts/mixin";
 @import "abstracts/variables";
@@ -9,15 +9,16 @@
 @import "base/utilities";
 @import "base/fonts";
 
-@import "components/button"; 
+@import "components/button";
+
 
 @import "layout/footer";
 @import "layout/header";
 @import "layout/navigation";
+@import "layout/page_header";
+@import "layout/page_body";
+@import "layout/page_footer";
 
 @import "pages/contact";
 
-
-
 @import "abstracts/bt5end";
-    
